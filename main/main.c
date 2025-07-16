@@ -26,7 +26,7 @@ static void uart_receive_streaming_task(void *arg)
 
     printf("Expecting %ld bytes\n", total_bytes);
 
-    uint8_t buf[1024];
+    uint8_t buf[256];
     uint32_t received_bytes = 0;
     while (received_bytes < total_bytes) {
         int to_read = (total_bytes - received_bytes) > sizeof(buf) ? sizeof(buf) : (total_bytes - received_bytes);
